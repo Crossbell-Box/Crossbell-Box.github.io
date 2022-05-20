@@ -38,14 +38,15 @@ const config = {
           sidebarPath: require.resolve("./sidebars.js"),
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
-          editUrl: "https://github.com/Crossbell-Box/website/tree/main/docs/",
+          editUrl:
+            "https://github.com/Crossbell-Box/Crossbell-Box.github.io/tree/main/docs/",
         },
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
           // Remove this to remove the "edit this page" links.
           editUrl:
-            "https://github.com/Crossbell-Box/docusaurus/tree/main/blog/",
+            "https://github.com/Crossbell-Box/Crossbell-Box.github.io/tree/main/blog/",
         },
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
@@ -64,12 +65,12 @@ const config = {
           src: "img/logo.svg",
         },
         items: [
-          // {
-          //   type: "doc",
-          //   docId: "intro",
-          //   position: "left",
-          //   label: "Dev Tutorial",
-          // },
+          {
+            type: "doc",
+            docId: "intro",
+            position: "left",
+            label: "Docs",
+          },
           // { to: "/blog", label: "Blog", position: "left" },
           {
             href: "https://scan.crossbell.io",
@@ -96,7 +97,7 @@ const config = {
             title: "Docs",
             items: [
               {
-                label: "Dev Tutorial",
+                label: "Tutorial",
                 to: "/docs/intro",
               },
             ],
@@ -131,9 +132,14 @@ const config = {
 
         copyright: `Copyright © ${new Date().getFullYear()} Crossbell`,
       },
+
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+
+      colorMode: {
+        respectPrefersColorScheme: true,
       },
     }),
 
