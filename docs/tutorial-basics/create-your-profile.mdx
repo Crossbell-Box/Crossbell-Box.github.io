@@ -2,8 +2,72 @@
 sidebar_position: 1
 ---
 
-# Create Your Profile
+# Create Your Profile In 3 Mins
 
-Create your profile in 5 mins.
+This is a tutorial on how to create a profile on Crossbell in **3 minutes**.
 
-TODO...
+You will get to know the basics of how things happen on Crossbell with ease.
+
+## 1. Connect to Crossbell
+
+First, let's connect to Crossbell!
+
+Click the button below. You will be asked to connect to your wallet, and switch to the **Crossbell** chain.
+
+import Connector from "@site/src/components/connector";
+
+<Connector />
+
+<br />
+<br />
+
+## 2. Claim $CSB from the Faucet
+
+On the Crossbell network, you need some $CSB to play with. Click the button below to see how much $CSB you have.
+
+import CsbChecker from "./components/CsbChecker.tsx";
+
+<CsbChecker />
+
+<br />
+<br />
+
+Move on to the next step if you have enough $CSB (> 0).
+
+## 3. Create Your Profile
+
+Here we go! The most exciting part - create your profile on Crossbell!
+
+import ProfileCreator from "./components/ProfileCreator.tsx";
+
+<ProfileCreator />
+
+<br />
+<br />
+
+---
+
+## One More Thing - How about Developing?
+
+Did you see how easy it was to create your profile on Crossbell?
+
+Not so surprisingly, it is also easy to **integrate Crossbell into your dapp** for developers!
+
+See the code below for what happened behind the scenes using [crossbell.js](https://www.npmjs.com/package/crossbell.js) SDK:
+
+```ts
+import { Crossbell } from "crossbell.js";
+
+// 1. Initialize Crossbell contract with an eth provider
+const contract = new Contract(provider);
+
+// 2. Connect to Crossbell
+await contract.connect();
+
+// 3. Create a profile
+const result = await contract.createProfile(address, "my-profile-handle", "");
+console.log(result.profileId); // the profile id
+console.log(result.transactionHash); // the transaction hash
+
+// Congratulations! You have created your profile!
+```

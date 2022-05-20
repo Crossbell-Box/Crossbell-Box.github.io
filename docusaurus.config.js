@@ -3,6 +3,7 @@
 
 const lightCodeTheme = require("prism-react-renderer/themes/github");
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const webpack = require("webpack");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -118,10 +119,10 @@ const config = {
           {
             title: "More",
             items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
+              // {
+              //   label: "Blog",
+              //   to: "/blog",
+              // },
               {
                 label: "GitHub",
                 href: "https://github.com/Crossbell-Box",
@@ -144,12 +145,38 @@ const config = {
     }),
 
   plugins: [
-    async function myPlugin(context, options) {
+    async function tailwindcss(context, options) {
       return {
         name: "docusaurus-tailwindcss",
         configurePostCss(postcssOptions) {
           postcssOptions.plugins.push(require("tailwindcss"));
           return postcssOptions;
+        },
+      };
+    },
+    function (context, options) {
+      return {
+        name: "custom-docusaurus-plugin",
+        // eslint-disable-next-line
+        configureWebpack(config, isServer, utils) {
+          return {
+            resolve: {
+              fallback: {
+                stream: require.resolve("stream-browserify"),
+                assert: require.resolve("assert/"),
+                util: require.resolve("util/"),
+                http: require.resolve("stream-http"),
+                https: require.resolve("https-browserify"),
+                os: require.resolve("os-browserify/browser"),
+                url: require.resolve("url/"),
+                process: require.resolve("process"),
+              },
+            },
+            plugins: [
+              new webpack.ProvidePlugin({ process: "process/browser" }),
+              new webpack.ProvidePlugin({ Buffer: ["buffer", "Buffer"] }),
+            ],
+          };
         },
       };
     },
