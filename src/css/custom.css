@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+/* You can override the default Infima variables here. */
+:root {
+  --ifm-color-primary: #dda845;
+  --ifm-color-primary-dark: #cc952f;
+  --ifm-color-primary-darker: #ba831d;
+  --ifm-color-primary-darkest: #b37c15;
+  --ifm-color-primary-light: #e7b75b;
+  --ifm-color-primary-lighter: #e7ba67;
+  --ifm-color-primary-lightest: #e7bd70;
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+
+  --ifm-hero-text-color: #000;
+
+  --ti-cursor-font-size: inherit;
+}
+
+/* For readability concerns, you should choose a lighter palette in dark mode. */
+[data-theme="dark"] {
+  --ifm-color-primary: #e7b75b;
+  --ifm-color-primary-dark: #dda845;
+  --ifm-color-primary-darker: #cc952f;
+  --ifm-color-primary-darkest: #ba831d;
+  --ifm-color-primary-light: #e7ba67;
+  --ifm-color-primary-lighter: #e7bd70;
+  --ifm-color-primary-lightest: #eac47d;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  --ifm-hero-text-color: #fff;
+}
+
+.navbar__logo {
+  height: 1.5em;
+}
+
+.hero {
+  color: initial;
+}
+
+a.btn,
+a.btn:hover {
+  text-decoration: none;
+  color: initial;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans");
+
+body {
+  font-family: "Open Sans", monospace;
+}
