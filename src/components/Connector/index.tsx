@@ -4,23 +4,29 @@ import WalletConnectProvider from "@walletconnect/web3-provider";
 import classNames from "classnames";
 import { toast } from "react-toastify";
 import { Contract } from "crossbell.js";
+import BrowserOnly from "@docusaurus/BrowserOnly";
 
-const web3Modal = new Web3Modal({
-  network: "mainnet",
-  cacheProvider: false,
-  providerOptions: {
-    walletconnect: {
-      package: WalletConnectProvider, // required
-      options: {
-        rpc: {
-          3737: "https://rpc.crossbell.io",
+function getWeb3Modal() {
+  const web3Modal = new Web3Modal({
+    network: "mainnet",
+    cacheProvider: false,
+    disableInjectedProvider: false,
+    providerOptions: {
+      walletconnect: {
+        package: WalletConnectProvider, // required
+        options: {
+          rpc: {
+            3737: "https://rpc.crossbell.io",
+          },
         },
       },
     },
-  },
-});
+  });
 
-export default function Connector() {
+  return web3Modal;
+}
+
+export function MyConnector() {
   const [loading, setLoading] = React.useState(false);
   const [address, setAddress] = React.useState(undefined);
 
@@ -28,14 +34,12 @@ export default function Connector() {
     if (loading || address) return;
     try {
       setLoading(true);
-      const provider = await web3Modal.connect();
+      const provider = await getWeb3Modal().connect();
       console.log({ provider });
       window.contract = new Contract(provider);
       window.address = provider.selectedAddress;
       await window.contract.connect();
-      console.log(
-        await window.contract.getPrimaryProfileId(provider.selectedAddress)
-      );
+      console.log(await window.contract.getBalance(provider.selectedAddress));
       // toast("Connected", { type: "success" });
       setAddress(provider.selectedAddress);
     } catch (e) {
@@ -58,4 +62,8 @@ export default function Connector() {
       {address ? "Connected: " + address : "Connect to Wallet"}
     </button>
   );
+}
+
+export default function BrowserOnlyConnector() {
+  return <BrowserOnly>{() => <MyConnector />}</BrowserOnly>;
 }
