@@ -55,7 +55,7 @@ function Typer() {
       getBeforeInit={(instance) => {
         instance
           .type(
-            "Capitalize Your <strong class='text-primary'>Social Information!</strong>"
+            "Capitalize Your <strong class='text-primary'>Social Activities!</strong>"
           )
           .pause(2000);
 
@@ -88,7 +88,7 @@ function HomepageHeader() {
   return (
     <>
       <header className="hero hero--primary min-h-screen bg-accent">
-        <div className="container hero-content flex-col text-center">
+        <div className="container hero-content flex-col bg-accent text-center">
           <h1 className="hero__title text-6xl sm:text-8xl font-extrabold mt-4 text-primary">
             {siteConfig.title}
           </h1>
@@ -105,8 +105,7 @@ function HomepageHeader() {
             style={{ lineHeight: "1.5em" }}
           >
             <span className="text-primary font-semibold">Crossbell</span> is a
-            platform for <span className="text-indigo">capitalizing</span> on
-            your{" "}
+            platform for <span className="text-indigo">capitalizing</span> your{" "}
             <span className="text-green underline decoration-dashed">
               social activities
             </span>
@@ -134,7 +133,7 @@ export default function Home(): JSX.Element {
   return (
     <Layout
       title={`${siteConfig.title} - ${siteConfig.tagline}`}
-      description="Description will go into a meta tag in <head />"
+      description={`${siteConfig.tagline}`}
     >
       <HomepageHeader />
 

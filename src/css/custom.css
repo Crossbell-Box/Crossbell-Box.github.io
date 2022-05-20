@@ -44,7 +44,7 @@
 }
 
 .hero {
-  color: initial;
+  color: initial !important;
 }
 
 a.btn,
