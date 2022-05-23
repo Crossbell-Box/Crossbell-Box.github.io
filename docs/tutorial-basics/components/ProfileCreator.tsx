@@ -75,12 +75,12 @@ export default function ProfileCreator() {
   };
 
   const handleChange = async (e) => {
+    const value = e.target.value;
+    setHandle(value);
+
     if (!window.address || !window.contract || txHash) {
       return;
     }
-
-    const value = e.target.value;
-    setHandle(value);
 
     if (value.length >= 3) {
       checkIfHandleExists(value);
@@ -91,7 +91,7 @@ export default function ProfileCreator() {
 
   const isValidRegex = /^[a-z0-9\-\_]+$/.test(handle);
   const isValidLength =
-    handle.length === 0 || (handle.length > 3 && handle.length <= 32);
+    handle.length === 0 || (handle.length >= 3 && handle.length <= 31);
   const isValidHandle =
     handle.length > 0 && !handleExists && isValidLength && isValidRegex;
 
@@ -118,7 +118,7 @@ export default function ProfileCreator() {
                 <span className="label-text">
                   What is your ideal profile handle?
                 </span>
-                <span className="label-text-alt">{handle.length}/32</span>
+                <span className="label-text-alt">{handle.length}/31</span>
               </label>
 
               <input
@@ -128,7 +128,7 @@ export default function ProfileCreator() {
                   "input-error": handle.length > 0 && !isValidHandle,
                 })}
                 onInput={handleChange}
-                maxLength={32}
+                maxLength={31}
                 minLength={3}
               />
 
@@ -136,7 +136,7 @@ export default function ProfileCreator() {
                 <span className="label-text-alt text-error">
                   {handleExists && <>Handle already exists. </>}
                   {!isValidLength && (
-                    <>Handle must be between 3 and 32 characters. </>
+                    <>Handle must be between 3 and 31 characters. </>
                   )}
                   {handle.length > 0 && !isValidRegex && (
                     <>

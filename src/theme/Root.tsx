@@ -41,7 +41,7 @@ export default function Root({ children }) {
         {() => (
           <ToastContainer
             autoClose={3000}
-            position="top-right"
+            position="bottom-left"
             theme={colorMode === "light" ? "light" : "dark"}
           />
         )}
