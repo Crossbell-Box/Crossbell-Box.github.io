@@ -110,8 +110,8 @@ function HomepageHeader() {
               social activities
             </span>
             , composed of an <span className="text-purple">EVM-compatible</span>{" "}
-            blockchain and
-            a set of <span className="text-pink">smart contracts</span>.
+            blockchain and a set of{" "}
+            <span className="text-pink">smart contracts</span>.
           </p>
 
           <Link className="btn btn-lg btn-primary" to="/docs/intro">
