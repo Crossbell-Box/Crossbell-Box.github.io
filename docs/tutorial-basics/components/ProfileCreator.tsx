@@ -203,6 +203,7 @@ export default function ProfileCreator() {
                 That's what{" "}
                 <strong className="text-primary">
                   Capitalizing Your Social Activities
+                  {/* We need to reconsider the wording `Capitalizing` here */}
                 </strong>{" "}
                 means!
               </p>

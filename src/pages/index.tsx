@@ -55,7 +55,7 @@ function Typer() {
       getBeforeInit={(instance) => {
         instance
           .type(
-            "Capitalize Your <strong class='text-primary'>Social Activities!</strong>"
+            "Decentralize Your <strong class='text-primary'>Social Activities!</strong>"
           )
           .pause(2000);
 
@@ -105,7 +105,8 @@ function HomepageHeader() {
             style={{ lineHeight: "1.5em" }}
           >
             <span className="text-primary font-semibold">Crossbell</span> is a
-            platform for <span className="text-indigo">capitalizing</span> your{" "}
+            platform for <span className="text-indigo">decentralizing</span>{" "}
+            your{" "}
             <span className="text-green underline decoration-dashed">
               social activities
             </span>
