@@ -8,7 +8,7 @@ const webpack = require("webpack");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Crossbell",
-  tagline: "Decentralize Your Social Activities",
+  tagline: "Own Your Social Activities",
   url: "https://crossbell.io",
   baseUrl: "/",
   onBrokenLinks: "throw",
