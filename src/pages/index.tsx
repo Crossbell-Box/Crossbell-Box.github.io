@@ -61,7 +61,7 @@ function Typer() {
 
         const altTexts = [
           "Profiles",
-          "Following",
+          "Follow Lists",
           "Notes",
           "Articles",
           "Likes",
@@ -88,30 +88,24 @@ function HomepageHeader() {
   return (
     <>
       <header className="hero hero--primary min-h-screen bg-accent">
-        <div className="container hero-content flex-col bg-accent text-center">
-          <h1 className="hero__title text-6xl sm:text-8xl font-extrabold mt-4 text-primary">
+        <div className="container hero-content flex-col bg-accent text-center item-center gap-6">
+          <h1 className="hero__title text-6xl sm:text-8xl font-semibold mt-4 text-primary">
             {siteConfig.title}
           </h1>
-
           <p className="hero__subtitle text-xl sm:text-4xl font-bold">
             {/* {siteConfig.tagline} */}
             <Typer />
           </p>
 
+
           <HeroImage />
 
           <p
-            className="text-2xl sm:text-4xl md:text-6xl font-medium text-left"
+            className="text-xl sm:text-2xl md:text-4xl font-medium text-center "
             style={{ lineHeight: "1.5em" }}
           >
-            <span className="text-primary font-semibold">Crossbell</span> is a
-            platform for <span className="text-indigo">owning</span> your{" "}
-            <span className="text-green underline decoration-dashed">
-              social activities
-            </span>
-            , composed of an <span className="text-purple">EVM-compatible</span>{" "}
-            blockchain and a set of{" "}
-            <span className="text-pink">smart contracts</span>.
+            <span className="text-primary font-bold">Crossbell</span> is a platform for owning your social activities, 
+            <br/>composed of an EVM-compatible blockchain and a set of smart contracts.
           </p>
 
           <Link className="btn btn-lg btn-primary" to="/docs/intro">

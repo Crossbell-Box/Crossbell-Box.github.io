@@ -27,6 +27,7 @@
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme="dark"] {
+  background-color: #242526;
   --ifm-color-primary: #e7b75b;
   --ifm-color-primary-dark: #dda845;
   --ifm-color-primary-darker: #cc952f;
@@ -37,8 +38,29 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 
   --ifm-hero-text-color: #fff;
+  --ifm-background-color: #242526;
+
 }
 
+.footer{
+  background-color:#0000001a;
+}
+[data-theme="dark"] .markdown{
+  color: #E2E2E2;
+}
+
+[data-theme="light"] .footer{
+  color: #242526;
+  background-color: #0000000d;
+}
+
+[data-theme="light"] .footer__title{
+  color: #242526;
+}
+
+[data-theme="light"] .footer__link-item{
+  color: #242526;
+}
 .navbar__logo {
   height: 1.5em;
 }
