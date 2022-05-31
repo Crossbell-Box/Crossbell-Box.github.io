@@ -98,7 +98,7 @@ const config = {
             title: "Docs",
             items: [
               {
-                label: "About",
+                label: "Tutorial",
                 to: "/docs/intro",
               },
             ],
@@ -140,6 +140,8 @@ const config = {
       },
 
       colorMode: {
+        defaultMode: 'light',
+        disableSwitch: true,
         respectPrefersColorScheme: true,
       },
     }),
