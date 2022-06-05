@@ -18,7 +18,7 @@ Crossbell is an **ownership platform** composed of
 1. an EVM-compatible blockchain
 2. a protocol implemented by a set of smart contracts
 
-Specifically, the information generated from **social activities** will be the initial form of data-capitalization on Crossbell.
+Specifically, the information generated from **social activities** will be the initial form of data-ownership by users on Crossbell.
 
 
 
