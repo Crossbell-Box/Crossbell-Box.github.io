@@ -8,6 +8,7 @@ import Link from "@docusaurus/Link";
 import useWindowSize from "react-use/lib/useWindowSize";
 import Confetti from "react-confetti";
 import BrowserOnly from "@docusaurus/BrowserOnly";
+import axios from "axios";
 
 export default function ProfileCreator() {
   const { width, height } = useWindowSize();
@@ -19,13 +20,19 @@ export default function ProfileCreator() {
   const [txHash, setTxHash] = React.useState(undefined);
 
   const checkIfHandleExists = useCallback(
-    debounce(async (handle) => {
+    debounce(async (handle: string) => {
       try {
-        const { data: exists } = await window.contract.existsProfileForHandle(
-          handle
-        );
+        const reserved: boolean = !!(
+          await axios.get(
+            "https://faas-sgp1-18bc02ac.doserverless.co/api/v1/web/fn-94f39aba-a3e4-4614-9e9a-628569184919/default/crosssync-ens-rns-check?handle=" +
+              handle.toLowerCase()
+          )
+        ).data.reserved;
 
-        console.log({ exists, handle });
+        const exists =
+          reserved || (await window.contract.existsProfileForHandle(handle));
+
+        console.log({ reserved, exists, handle });
         if (exists) {
           setHandleExists(true);
         } else {
@@ -132,7 +139,7 @@ export default function ProfileCreator() {
 
               <label className="label">
                 <span className="label-text-alt text-error">
-                  {handleExists && <>Handle already exists. </>}
+                  {handleExists && <>Handle is not available. </>}
                   {!isValidLength && (
                     <>Handle must be between 3 and 31 characters. </>
                   )}
