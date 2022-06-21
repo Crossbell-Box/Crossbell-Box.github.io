@@ -97,15 +97,17 @@ function HomepageHeader() {
             <Typer />
           </p>
 
-
           <HeroImage />
 
           <p
             className="text-xl sm:text-2xl md:text-4xl font-medium text-center "
             style={{ lineHeight: "1.5em" }}
           >
-            <span className="text-primary font-bold">Crossbell</span> is a platform for owning your social activities, 
-            <br/>composed of an EVM-compatible blockchain and a set of smart contracts.
+            <span className="text-primary font-bold">Crossbell</span> is a
+            platform for owning your social activities,
+            <br />
+            composed of an EVM-compatible blockchain and a set of smart
+            contracts.
           </p>
 
           <Link className="btn btn-lg btn-primary" to="/docs/intro">
