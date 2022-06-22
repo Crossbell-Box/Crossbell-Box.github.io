@@ -30,7 +30,8 @@ export default function ProfileCreator() {
         ).data.reserved;
 
         const exists =
-          reserved || (await window.contract.existsProfileForHandle(handle));
+          reserved ||
+          (await window.contract.existsProfileForHandle(handle)).data;
 
         console.log({ reserved, exists, handle });
         if (exists) {
