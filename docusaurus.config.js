@@ -88,6 +88,16 @@ const config = {
             label: "GitHub",
             position: "right",
           },
+          {
+            href: "https://twitter.com/_Crossbell",
+            label: "Twitter",
+            position: "right",
+          },
+          {
+            href: "https://discord.gg/ecpfdHHw",
+            label: "Discord",
+            position: "right",
+          },
         ],
       },
 
