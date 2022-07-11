@@ -110,7 +110,7 @@ export default function ProfileCreator() {
           <p>
             The profile of your character contains many properties (e.g.,
             handle, name, bio, avatars, etc). Here we will setup one with the
-            only required property being the
+            only required property being the 
             <strong>handle</strong>.
           </p>
 
