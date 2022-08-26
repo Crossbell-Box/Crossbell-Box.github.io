@@ -37,7 +37,7 @@
     "react-toastify": "^9.0.1",
     "react-use": "^17.4.0",
     "typeit-react": "2.3.3",
-    "web3modal": "^1.9.7"
+    "web3modal": "1.9.9"
   },
   "devDependencies": {
     "@docusaurus/module-type-aliases": "2.0.0-beta.20",
